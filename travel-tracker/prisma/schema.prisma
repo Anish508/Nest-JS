@@ -34,7 +34,7 @@ model Destinations{
   id Int @id @default(autoincrement())
   name String
   travelDate DateTime?
-  notes String
+  notes String?
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
   userId Int
