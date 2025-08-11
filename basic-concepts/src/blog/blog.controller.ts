@@ -15,7 +15,7 @@ export class BlogController {
             return this.blogService.findByID(+id)
       }
 
-      @Get('unique-key/:key')
+@Get('unique-key/:key')
       findByKey(@Param('key')key: string){
             return this.blogService.findUniqueKey(key)
       }
