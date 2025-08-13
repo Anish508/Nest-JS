@@ -86,6 +86,23 @@ let FileUploadService = class FileUploadService {
             });
         });
     }
+    async deleteFile(fileId) {
+        const file = await this.prisma.file.findUnique({
+            where: {
+                id: fileId
+            }
+        });
+        if (!file) {
+            throw new Error("File not found! please try with other file id ");
+        }
+        await cloudinary_1.v2.uploader.destroy(file.publicId);
+        await this.prisma.file.delete({
+            where: { id: fileId }
+        });
+        return {
+            message: "File deleted successfully"
+        };
+    }
 };
 exports.FileUploadService = FileUploadService;
 exports.FileUploadService = FileUploadService = __decorate([

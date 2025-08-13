@@ -11,4 +11,7 @@ export declare class FileUploadService {
         updatedAt: Date;
     }>;
     private uploadToCloudinary;
+    deleteFile(fileId: string): Promise<{
+        message: string;
+    }>;
 }

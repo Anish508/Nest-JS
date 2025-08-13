@@ -10,4 +10,7 @@ export declare class FileUploadController {
         createAt: Date;
         updatedAt: Date;
     }>;
+    deleteFile(id: string): Promise<{
+        message: string;
+    }>;
 }

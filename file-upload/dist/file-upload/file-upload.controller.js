@@ -26,6 +26,9 @@ let FileUploadController = class FileUploadController {
     async uploadFile(file) {
         return this.fileUploadService.uploadFile(file);
     }
+    async deleteFile(id) {
+        return this.fileUploadService.deleteFile(id);
+    }
 };
 exports.FileUploadController = FileUploadController;
 __decorate([
@@ -46,6 +49,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], FileUploadController.prototype, "uploadFile", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], FileUploadController.prototype, "deleteFile", null);
 exports.FileUploadController = FileUploadController = __decorate([
     (0, common_1.Controller)('file-upload'),
     __metadata("design:paramtypes", [file_upload_service_1.FileUploadService])
